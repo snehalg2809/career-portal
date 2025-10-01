@@ -1,0 +1,269 @@
+.option-form-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: visible;
+}
+
+.option-form-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.option-form-data::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.option-form-data {
+  margin: 3rem 0;
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.option-form-data-card {
+  width: 100%;
+  position: relative;
+  height: 100%;
+  padding: 0 1rem;
+  margin: 1rem auto;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  background: #f1f0e9;
+  z-index: 3;
+}
+
+.option-form-heading {
+  background: #003161;
+  color: #fff;
+  padding: 1rem;
+}
+
+.option-form-title {
+  background: #003161;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 1rem;
+}
+
+.option-form-steps {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.steps-div {
+  display: flex;
+  border-radius: 10px;
+  margin: 1rem 0.2rem;
+}
+
+.step-number {
+  width: "50px";
+  background: #26667f;
+  color: #fff;
+  font-size: 18px;
+  padding: 0.5rem 1rem;
+  border-radius: 3px 0 0 3px;
+}
+
+.step-name {
+  padding: 0.5rem 2rem;
+  background: #1c6ea4;
+  font-size: 18px;
+  color: #fff;
+  border-radius: 0 3px 3px 0;
+}
+
+.step-number.disabled {
+  width: "50px";
+  background: #7e99a3;
+  color: #fff;
+  font-size: 18px;
+  padding: 0.5rem 1rem;
+  border-radius: 3px 0 0 3px;
+}
+
+.step-name.disabled {
+  padding: 0.5rem 2rem;
+  background: #c9cdcf;
+  font-size: 18px;
+  color: #fff;
+  border-radius: 0 3px 3px 0;
+}
+
+.option-form-actions {
+  padding: 1rem 0;
+  display: flex;
+}
+
+.action-text {
+  color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+}
+
+.option-form-inputs {
+  border: 1px solid #c9cdcf;
+  background: #bbdce5;
+}
+
+.form-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  gap: 0.5rem;
+  border-bottom: 1px solid #c9cdcf;
+  margin-left: 20rem;
+}
+.form-row-2 {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  gap: 0.5rem;
+  border-bottom: 1px solid #c9cdcf;
+}
+
+.form-row-3 {
+  display: flex;
+  justify-content: start;
+  padding: 0.5rem;
+  gap: 0.5rem;
+  font-weight: 700;
+  border-bottom: 1px solid #c9cdcf;
+}
+
+.row-data {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: flex-end;
+  width: 45%;
+}
+
+.form-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.form-table {
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.table-data {
+  padding: 1rem 0;
+  height: 100%;
+}
+
+.table-btn {
+  display: flex;
+  justify-content: end;
+  margin: 1rem;
+}
+
+.table-heading {
+  padding: 1rem;
+  background: #bbdce5;
+}
+.preferences-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem;
+}
+
+.selected-row {
+  background-color: #f2ead3 !important;
+  font-weight: 900 !important;
+  font-weight: bolder;
+}
+
+.selected-row:hover {
+  background-color: #f1f0e9;
+}
+
+.steps-div {
+  cursor: pointer;
+}
+
+.steps-div.active .step-number,
+.steps-div.active .step-name {
+  font-weight: bold;
+  color: #fff;
+  opacity: 1;
+}
+
+.steps-div.completed .step-number {
+  background-color: #344f1f;
+  color: white;
+}
+
+.steps-div.completed .step-name {
+  background-color: #006a67;
+  color: white;
+}
+
+.steps-div.disabled {
+  pointer-events: none;
+}
+
+.steps-div.disabled .step-number {
+  width: "50px";
+  background: #7e99a3;
+  color: #fff;
+  font-size: 18px;
+  padding: 0.5rem 1rem;
+  border-radius: 3px 0 0 3px;
+}
+
+.steps-div.disabled .step-name {
+  padding: 0.5rem 2rem;
+  background: #c9cdcf;
+  font-size: 18px;
+  color: #fff;
+  border-radius: 0 3px 3px 0;
+}
+
+.submit-form-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.submit-form-container img {
+  height: 100px;
+  width: 100px;
+  position: relative;
+  border-radius: 50%;
+}
+
+.success-text {
+  font-size: 30px;
+  font-weight: 700;
+}

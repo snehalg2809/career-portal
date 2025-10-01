@@ -1,0 +1,92 @@
+html {
+  overflow-y: scroll;
+}
+
+.select-box-container {
+  position: relative;
+  width: 150px;
+}
+
+.select-box-container .select-box {
+  width: 50%;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px 0 20px;
+  cursor: pointer;
+  background: #fff;
+  z-index: 2;
+}
+
+.select-box:hover,
+.select-box.active {
+  border: 1px solid #7fb5ff;
+  box-shadow: 0 0 0 4px #c4ddff;
+}
+
+.select-box.active .chevron-icon {
+  transform: rotate(180deg);
+}
+
+.select_item_box {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 50%;
+  background: #fff;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.select_item_box.active {
+  opacity: 1;
+  pointer-events: all;
+  height: 150px;
+  overflow-y: auto;
+}
+
+.select_item {
+  height: 35px;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  margin: 5px 0;
+  transition: all 0.2s ease;
+}
+
+.select_item:hover {
+  background: #c4ddff;
+}
+
+.select_item .item_name {
+  width: 100%;
+  margin-left: 10px;
+}
+
+select {
+  min-inline-size: 14ch;
+  justify-content: space-between;
+  &,
+  &::picker {
+    appearance: base-select;
+    font: inherit;
+    padding: 1rem;
+    border: none;
+    border-radius: 1rem;
+    background-color: #c4ddff;
+    line-height: 1.6;
+  }
+
+  &::picker(select) {
+    margin-block-start: 0.5rem;
+  }
+}

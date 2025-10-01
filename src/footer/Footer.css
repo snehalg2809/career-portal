@@ -1,0 +1,82 @@
+/* FOOTER CSS */
+.footer {
+  background: #fff;
+  bottom: 0;
+  left: 0;
+  margin-top: auto;
+  z-index: 1;
+}
+
+.footer1 {
+  height: 3rem;
+  width: 97%;
+  color: #000;
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.footer1 .social-handles {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.3rem;
+  gap: 1rem;
+  height: 80px;
+}
+
+.social-icons {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
+
+.footer2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 16px;
+}
+
+.box-icon,
+svg {
+  width: 140%;
+  height: 100%;
+  fill: rgb(62, 49, 49);
+}
+
+.footer2 {
+  padding: 1rem;
+  color: #000;
+}
+
+.footer2 .menu {
+  width: 350px;
+}
+
+.menu-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.footer2 .header {
+  color: #239ba7;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.footer2 a {
+  text-decoration: none;
+  color: #000;
+}
+
+.footer3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem;
+}

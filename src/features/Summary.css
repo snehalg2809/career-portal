@@ -1,0 +1,143 @@
+.summary-container {
+  padding: 10px;
+  background: #fff;
+  border-radius: 12px;
+  max-width: 95%;
+  margin: 20px auto;
+}
+
+.summary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.summary-header h2 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 20px;
+}
+
+.download-icon {
+  font-size: 22px;
+  cursor: pointer;
+  color: #4fb7b3;
+  transition: 0.2s;
+}
+
+.download-icon:hover {
+  color: #4fb7b3;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  width: 100%;
+  max-height: 400px;
+  border-radius: 8px;
+}
+
+.preference-table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 900px;
+  font-size: 14px;
+  padding: 1px;
+}
+
+.preference-table thead {
+  position: sticky;
+  top: 0;
+  background: #4fb7b3;
+  color: white;
+  z-index: 1;
+}
+
+.preference-table th,
+.preference-table td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.preference-table th:nth-child(4),
+.preference-table td:nth-child(4),
+.preference-table th:nth-child(5),
+.preference-table td:nth-child(5) {
+  text-align: left;
+}
+
+.preference-table tr {
+  opacity: 0;
+  color: #2c3e50;
+  transform: translateY(20px);
+  animation: fadeInUp 0.4s ease forwards;
+  cursor: pointer;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.draggable-row:active {
+  cursor: grabbing;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+th {
+  color: #fff;
+}
+
+.preference-table tbody > tr:hover {
+  background-color: #e7f2ef;
+  color: #2c3e50;
+  transform: background 0.4s ease, color 0.4s ease;
+}
+
+.preference-table tr:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.preference-table tr:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.preference-table tr:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.preference-table tr:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+.preference-table tr:nth-child(5) {
+  animation-delay: 1s;
+}
+
+.preference-table tr:nth-child(6) {
+  animation-delay: 1.2s;
+}
+
+.preference-table tr:nth-child(7) {
+  animation-delay: 1.4s;
+}
+
+.preference-table tr:nth-child(8) {
+  animation-delay: 1.6s;
+}
+
+.preference-table tr:nth-child(9) {
+  animation-delay: 1.8s;
+}
+
+.preference-table tr:nth-child(10) {
+  animation-delay: 2s;
+}
+
+.draggable-row {
+  transition: background 0.2s;
+  cursor: grabbing;
+}

@@ -1,0 +1,294 @@
+
+.profile-container {
+  width: 100%;
+  min-height: 100vh;
+  background: #4fb7b3;
+}
+
+.profile-options {
+  width: 20%;
+  height: 70%;
+  background-color: #efefef;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: none;
+  border-radius: 5px;
+}
+
+.menu-header {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 2rem;
+  border-bottom: 1px solid;
+
+}
+
+.profile-menu-items {
+  width: 100%;
+  font-size: 160x;
+  padding: 2rem 0;
+}
+
+.menu-name {
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+}
+
+.profile-content {
+  width: 60%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.progress-container {
+  width: 10%;
+}
+
+.progress-bar {
+  height: 200px;
+  width: 200px;
+}
+
+.profile-data {
+  margin: 3rem 0;
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.profile-data-card {
+  width: 100%;
+  position: relative;
+  display: flex;
+  height: 100%;
+  padding: 2rem;
+  margin: 2rem auto;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  z-index: 3;
+}
+
+.content-container {
+  background: #f0f0f0;
+  height: 98%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+
+.user-image img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+
+.user-details {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+}
+.upload-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.image-preview {
+  width: 200px;
+  height: 200px;
+  margin: 20px auto;
+  border: 2px dashed #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.image-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.custom-file-input {
+  margin: 2rem;
+  padding: 3px;
+  background-color: #4fb7b3;
+  color: #fff;
+  font-size: 12px;
+  width: 200px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.custom-file-input:hover {
+  background-color: #86B0BD;
+}
+
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.custom-file-input::before {
+  content: "Choose Image";
+  display: inline-block;
+  background: #4fb7b3;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.custom-file-input:hover::before {
+  background: #86B0BD;
+}
+
+.personal-data-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-data {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding: 2rem;
+}
+
+.details-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap; 
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 200px;
+}
+
+.input-group label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.content-input {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.content-input:focus {
+  border-color: #4fb7b3; 
+}
+
+.personal-details {
+  height: 100%;
+  padding: 2rem;
+}
+
+.progress-container {
+  background: #efefef;
+  width: 20%;
+  height: 70%;
+  border-radius: 10px;
+}
+
+.menu-name:hover {
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.education-container {
+  padding: 3rem;
+}
+
+.progress-container {
+  background: #f0f0f0;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.progress-container p {
+  font-size: 14px;
+  color: #333;
+}
+
+.css-1o8dslu {
+  top: -20px !important;
+  font-weight: 700;
+}
+
+.css-1jkzbat-MuiTypography-root {
+  color: #000;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.breadcrumbs-div {
+  width: 300px;
+  height: 50px;
+  padding: 1rem 1rem 0;
+}
+
+.css-1armsqn-MuiTypography-root {
+  font-size: medium;
+  font-weight: 900;
+}
+
+.content-input:read-only{
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.css-eg3vbm-MuiSnackbar-root{
+  margin-top: 5rem;
+}
+.personal-data{
+  padding: 1rem;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center !important;
+}
+
+.student-data{
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.student-data label{
+  font-weight: 700;
+}
+
+.student-details{
+  display: flex;
+  gap: 1rem;
+}
+
+.complete-profile-text{
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 3rem;
+}
