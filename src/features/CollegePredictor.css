@@ -15,22 +15,13 @@
   z-index: 0;
 }
 
-.predictor-data::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.1);
-  z-index: 1;
-}
 
 .predictor-data {
   margin: 3rem 0;
   padding: 2rem;
   position: relative;
-  z-index: 2;
+  z-index: 1;
+  background: #4fb7b3;
 }
 
 .predictor-data-card {
@@ -83,19 +74,8 @@
   margin: 20px auto;
   max-height: 450px;
   overflow-y: auto;
-  /* overflow-x: auto; */
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   background: #fff;
 }
 
-/* .predictor-table-container {
-  width: 90%;
-  margin: 20px auto;
-  max-height: 400px;
-  overflow-y: auto;
-  overflow-x: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  background: #fff;
-} */

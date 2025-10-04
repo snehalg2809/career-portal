@@ -56,22 +56,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
-            <Route
-              path="/select"
-              element={
-                <ProtectedRoute>
-                  <CustomSelect />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/college-predictor"
-              element={
-                <ProtectedRoute>
-                  <CollegePredictor />
-                </ProtectedRoute>
-              }
-            />
+           
             <Route
               path="/preference-list"
               element={
@@ -93,6 +78,14 @@ function App() {
               element={
                 <ProtectedRoute>
                   <BranchwiseList />
+                </ProtectedRoute>
+              }
+            />
+             <Route
+              path="/college-predictor"
+              element={
+                <ProtectedRoute>
+                  <CollegePredictor />
                 </ProtectedRoute>
               }
             />

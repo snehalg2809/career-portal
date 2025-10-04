@@ -85,7 +85,7 @@ export default function Profile() {
   const [snackbarSeverity, setSnackbarSeverity] = useState("success");
   const [snackbarMessage, setSnackbarMessage] = useState("");
   const [image, setImage] = useState("");
-  const [activeSection, setActiveSection] = useState("profile");
+  const [activeSection, setActiveSection] = useState("personal");
   const [showPersonalDetails, setShowPersonalDetails] = useState(false);
 
   const showSnackbar = (message, severity = "success") => {
@@ -307,52 +307,6 @@ export default function Profile() {
               </Alert>
             </Snackbar>
             <div className="content-container">
-              {activeSection === "profile" && (
-                <div className="">
-                  <h1 style={{ textAlign: "center" }}>Student Profile</h1>
-                  <div className="student-data">
-                    <div className="student-details">
-                      <label> User Name:</label>
-                      <div>{user_id}</div>
-                    </div>
-                    <div className="student-details">
-                      <label> Email ID:</label>
-                      <div>{user_email}</div>
-                    </div>
-                    {personalProgress === 100 ? (
-                      <div>
-                        <div className="student-details">
-                          <label> Full Name:</label>
-                          <div>
-                            {personalData.firstName} {personalData.lastName}
-                          </div>
-                        </div>
-                        <div className="student-details">
-                          <label> Contact Number:</label>
-                          <div>{personalData.contactNumber}</div>
-                        </div>
-                        <div className="student-details">
-                          <label> Date of Birth:</label>
-                          <div>{personalData.dob}</div>
-                        </div>
-                        <div className="student-details">
-                          <label> Gender:</label>
-                          <div>{personalData.gender}</div>
-                        </div>
-                        <div className="student-details">
-                          <label> Mother's Name:</label>
-                          <div>{personalData.motherName}</div>
-                        </div>
-                      </div>
-                    ) : (
-                      <div className="complete-profile-text">
-                        Please complete your profile so your data will be shown
-                        here!
-                      </div>
-                    )}
-                  </div>
-                </div>
-              )}
               {activeSection === "personal" && (
                 <div className="personal-details">
                   <div className="user-details">

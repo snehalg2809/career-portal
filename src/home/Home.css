@@ -407,7 +407,7 @@ stagger delays using nth-child .card:nth-child(1) {
 
 .news-container .news-card {
   padding: 0.5rem;
-  height: 180px;
+  height: 150px;
   width: 300px;
   background: #ffce1b;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
@@ -416,7 +416,7 @@ stagger delays using nth-child .card:nth-child(1) {
 
 .news-container .news-card:hover {
   background: #f8fab4;
-  transform: translateY(-6px);
+  /* transform: translateY(-6px); */
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
@@ -441,11 +441,15 @@ stagger delays using nth-child .card:nth-child(1) {
 .news-container .card-block .read-more-btn {
   height: 40px;
   margin-top: 2rem;
-  width: 140px;
+  width: 110px;
   background-color: #fff;
   border-radius: 0.5rem;
   padding: 0.5rem;
   cursor: pointer;
+  position: absolute;
+  bottom: 60px;
+  display: flex;
+  align-items: center;
 }
 
 .news-container .card-block a {
@@ -462,7 +466,7 @@ stagger delays using nth-child .card:nth-child(1) {
 .us-container img {
   position: absolute;
   width: 100vw;
-  height: 70%;
+  height: 60%;
   opacity: 0.4;
 }
 
@@ -520,7 +524,7 @@ stagger delays using nth-child .card:nth-child(1) {
 
 .us-container .us-description {
   text-align: center;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 500;
   color: #000;
   z-index: 1;
@@ -565,7 +569,7 @@ stagger delays using nth-child .card:nth-child(1) {
 .offer-container {
   height: 50%;
   margin: 4rem;
-  margin-top: 20rem;
+  margin-top: 10rem;
 }
 
 .offer-container .offer-header {
@@ -686,7 +690,7 @@ stagger delays using nth-child .card:nth-child(1) {
 }
 
 .heading-2 {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 600;
 }
 

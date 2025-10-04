@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Breadcrumbs, Link, Typography } from "@mui/material";
 import { useLocation, Link as RouterLink } from "react-router-dom";
@@ -8,7 +9,7 @@ function BreadcrumbsNav() {
   const pathnames = location.pathname.split("/").filter((x) => x);
 
   return (
-    <Breadcrumbs aria-label="breadcrumb" sx={{ mb: 2 }}>
+    <Breadcrumbs aria-label="breadcrumb" sx={{ mb: 2 }} separator="›">
       <Link component={RouterLink} underline="hover" color="inherit" to="/home" sx={{ fontWeight: 600}}>
         Home
       </Link>

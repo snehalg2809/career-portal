@@ -51,18 +51,18 @@ function Home() {
   const navigate = useNavigate();
   const [showSignModal, setShowSignModal] = useState(false);
   const [requestCallbackData, setRequestCallbackData] = useState({
-    name: '',
-    email: '',
-    phoneNo: '',
-    stream: '',
-    message: ''
+    name: "",
+    email: "",
+    phoneNo: "",
+    stream: "",
+    message: "",
   });
 
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarSeverity, setSnackbarSeverity] = useState("success");
   const [snackbarMessage, setSnackbarMessage] = useState("");
 
-  const streams = ["Engineering", "Pharmacy", "Management"]
+  const streams = ["Engineering", "Pharmacy", "Management"];
   const googleNewsRss =
     "https://news.google.com/rss/search?q=NEET+महाराष्ट्र+प्रवेश+निकाल+JEE+महाराष्ट्र+प्रवेश+निकाल&hl=mr&gl=IN&ceid=IN:mr";
 
@@ -99,10 +99,13 @@ function Home() {
 
   const requestACallback = () => {
     if (requestCallbackData) {
-      sessionStorage.setItem("request-data", JSON.stringify(requestCallbackData))
+      sessionStorage.setItem(
+        "request-data",
+        JSON.stringify(requestCallbackData)
+      );
       showSnackbar("✅ Request submitted successfully!", "success");
     }
-  }
+  };
 
   const showSnackbar = (message, severity = "success") => {
     setSnackbarMessage(message);
@@ -379,7 +382,12 @@ function Home() {
                     type="text"
                     name="name"
                     placeholder="Enter your name"
-                    onChange={(e) => setRequestCallbackData({ ...requestCallbackData, name: e.target.value })}
+                    onChange={(e) =>
+                      setRequestCallbackData({
+                        ...requestCallbackData,
+                        name: e.target.value,
+                      })
+                    }
                     required
                   />
                 </div>
@@ -392,7 +400,12 @@ function Home() {
                     type="email"
                     name="email"
                     placeholder="Enter your email"
-                    onChange={(e) => setRequestCallbackData({ ...requestCallbackData, email: e.target.value })}
+                    onChange={(e) =>
+                      setRequestCallbackData({
+                        ...requestCallbackData,
+                        email: e.target.value,
+                      })
+                    }
                     required
                   />
                 </div>
@@ -405,18 +418,28 @@ function Home() {
                       type="tel"
                       name="phoneNo"
                       placeholder="Enter your phone number"
-                      onChange={(e) => setRequestCallbackData({ ...requestCallbackData, phoneNo: e.target.value })}
+                      onChange={(e) =>
+                        setRequestCallbackData({
+                          ...requestCallbackData,
+                          phoneNo: e.target.value,
+                        })
+                      }
                     />
                   </div>
                   <div className="ml-4" style={{ width: "50%" }}>
                     <CustomSelect
-                      height={40}
-                      borderRadius={10}
-                      width={120}
+                      height={41}
+                      borderRadius={7}
+                      sx={{ width: '100%' }}
                       options={streams}
                       value={requestCallbackData.stream}
                       placeholder="Choose stream"
-                      onChange={(value) => setRequestCallbackData({ ...requestCallbackData, stream: value })}
+                      onChange={(value) =>
+                        setRequestCallbackData({
+                          ...requestCallbackData,
+                          stream: value,
+                        })
+                      }
                     />
                   </div>
                 </div>
@@ -429,11 +452,17 @@ function Home() {
                     name="message"
                     placeholder="Write your message here..."
                     required
-
-                    onChange={(e) => setRequestCallbackData({ ...requestCallbackData, message: e.target.value })}
+                    onChange={(e) =>
+                      setRequestCallbackData({
+                        ...requestCallbackData,
+                        message: e.target.value,
+                      })
+                    }
                   ></textarea>
                 </div>
-                <button className="request-btn" onClick={requestACallback}>Request a call back</button>
+                <button className="request-btn" onClick={requestACallback}>
+                  Request a call back
+                </button>
               </div>
             </div>
             <Snackbar
