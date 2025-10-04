@@ -69,7 +69,7 @@ function BranchwiseList() {
 
   const [page, setPage] = useState(1);
   const rowsPerPage = 5;
-  const handlePageChange = (value) => {
+  const handlePageChange = (event, value) => {
     setPage(value);
   };
 

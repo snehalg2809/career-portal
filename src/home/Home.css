@@ -154,7 +154,8 @@ header-container .header-text {
 .features-container .cards {
   padding: 2rem;
   position: relative;
-  height: 280px;
+  height: -webkit-fill-available;
+  /* min-height: 250px; */
   width: 400px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 4px 6px rgba(0, 0, 0, 0.16);
   gap: 1rem;
@@ -176,7 +177,8 @@ header-container .header-text {
   align-items: center;
   justify-content: center;
   height: 30px;
-  width: 110px;
+  /* width: auto; */
+  max-width: 150px;
   background: #896c6c;
   color: #fff;
   border-radius: 0.5rem;
@@ -196,6 +198,12 @@ header-container .header-text {
 .features-container .card-container .cards .card-body .card-title {
   margin-top: 70px;
   font-size: 14px;
+}
+
+.card-text{
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+  font-size: 12px;
 }
 
 .features-container .card-container .cards .card-body img {
@@ -399,7 +407,7 @@ stagger delays using nth-child .card:nth-child(1) {
 
 .news-container .news-card {
   padding: 0.5rem;
-  height: 140px;
+  height: 180px;
   width: 300px;
   background: #ffce1b;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
@@ -431,9 +439,9 @@ stagger delays using nth-child .card:nth-child(1) {
 }
 
 .news-container .card-block .read-more-btn {
-  height: 30px;
+  height: 40px;
   margin-top: 2rem;
-  width: 120px;
+  width: 140px;
   background-color: #fff;
   border-radius: 0.5rem;
   padding: 0.5rem;
@@ -476,8 +484,9 @@ stagger delays using nth-child .card:nth-child(1) {
 }
 
 .us-container .card-div .us-card {
-  height: 200px;
+  height: -webkit-fill-available;;
   width: 300px;
+  max-height: 400px;
   background: #efefef;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
   opacity: 1;
@@ -585,7 +594,8 @@ stagger delays using nth-child .card:nth-child(1) {
 }
 
 .offer-container .offer-card-div .offer-card {
-  height: 340px;
+ height: auto;
+  max-width: 400px;
   width: 400px;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
   /* background: #91ADC8; */

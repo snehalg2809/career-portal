@@ -202,7 +202,7 @@ function CollegePredictor() {
     startIndex + rowsPerPage
   );
 
-  const handlePageChange = (value) => {
+  const handlePageChange = (event, value) => {
     setPage(value);
   };
 

@@ -623,6 +623,7 @@ export default function Profile() {
                       padding: ".5rem 0",
                       textTransform: "initial",
                     }}
+                    disabled={personalProgress !== 100}
                     onClick={savePersonalDetails}
                   >
                     Save Personal Details
@@ -735,6 +736,7 @@ export default function Profile() {
                       padding: ".5rem 0",
                       textTransform: "initial",
                     }}
+                    disabled={educationProgress !== 100}
                     onClick={saveEducationDetails}
                   >
                     Save Education Details
@@ -884,6 +886,7 @@ export default function Profile() {
                       textTransform: "initial",
                     }}
                     onClick={saveExamDetails}
+                    disabled={examProgress !== 100}
                   >
                     Save Exam Details
                   </Button>
