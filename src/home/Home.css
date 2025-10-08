@@ -96,12 +96,14 @@ header-container .header-text {
 
 .header-container .header-btn {
   height: 40px;
-  width: 200px;
+  width: auto;
   border-radius: 1rem;
   color: #fff;
   border: none;
   background: teal;
   font-size: 16px;
+  padding: 0.5rem;
+  text-decoration: none;
 }
 
 .header-container .header-text .btn-div {
@@ -412,6 +414,7 @@ stagger delays using nth-child .card:nth-child(1) {
   background: #ffce1b;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
   border-bottom: 3px solid #000;
+  /* border-radius: 1rem; */
 }
 
 .news-container .news-card:hover {
@@ -441,7 +444,8 @@ stagger delays using nth-child .card:nth-child(1) {
 .news-container .card-block .read-more-btn {
   height: 40px;
   margin-top: 2rem;
-  width: 110px;
+  /* width: 110px; */
+  width: auto;
   background-color: #fff;
   border-radius: 0.5rem;
   padding: 0.5rem;
@@ -662,7 +666,7 @@ stagger delays using nth-child .card:nth-child(1) {
 .form-container img {
   opacity: 0.5;
   position: absolute;
-  height: 80%;
+  height: 70%;
   width: 99vw;
 }
 

@@ -25,7 +25,7 @@ import HeaderImage from "../images/header-img.gif";
 import Footer from "../footer/Footer";
 import Toast from "../toast/Toast";
 import { Button, Snackbar, Alert } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import CustomSelect from "../features/CustomSelect";
 
 const Modal = ({ title, message, onCancel, onConfirm }) => (
@@ -137,12 +137,12 @@ function Home() {
                   <FontAwesomeIcon className="ml-1" icon={faArrowRight} />
                 </span>
               </button>
-              <button className="header-btn">
-                Learn More
+              <Link to="/profile" className="header-btn">
+                Complete your profile
                 <span>
                   <FontAwesomeIcon className="ml-1" icon={faArrowRight} />
                 </span>
-              </button>
+              </Link>
             </div>
           </div>
           <div className="header-img">
