@@ -17,8 +17,17 @@ import BreadcrumbsNav from "../nav/BreadcrumbsNav";
 import SuccessGif from "../images/about-us-imgs/verified.gif";
 function OptionForm() {
   const [showTable, setShowTable] = useState(false);
-  const [insertChoiceData, setInsertChoiceData] = useState(false);
-  const [moveChoiceData, setMoveChoiceData] = useState(false);
+  // const [insertChoiceData, setInsertChoiceData] = useState(false);
+  // const [insertDirectChoiceData, setInsertDirectChoiceData] = useState(false);
+  // const [moveChoiceData, setMoveChoiceData] = useState(false);
+  // Define a single state to track the current mode
+  const [choiceMode, setChoiceMode] = useState(null);
+  // possible values: 'move', 'insert', 'insertDirect'
+
+  const moveChoice = () => setChoiceMode("move");
+  const showInsertChoice = () => setChoiceMode("insert");
+  const showInsertDirectChoice = () => setChoiceMode("insertDirect");
+
   const [formData, setFormData] = useState({
     university_name: "",
     course_name: "",
@@ -283,22 +292,9 @@ function OptionForm() {
   const saveOptionData = () => {
     setCurrentStep(4);
   };
-  const institute_names = [
-    "Jaywant Shikshan Prasarak Mandal's Rajarshi Shahu College of Engineering, Tathawade, Pune",
-    "Genba Sopanrao Moze College of Engineering, Baner-Balewadi, Pune",
-    "JSPM's Jaywantrao Sawant College of Engineering, Pune",
-    "MIT Academy of Engineering, Alandi, Pune",
-    "Siddhant College of Engineering, A/p Sudumbre, Tal. Maval, Dist-Pune",
-  ];
 
-  const choice_code = [
-    "0614924510",
-    "0614924511",
-    "0614924512",
-    "0614924513",
-    "0614924514",
-    "0614924515",
-  ];
+
+ 
   const table_data = [
     {
       Sr_No: 1,
@@ -428,6 +424,9 @@ function OptionForm() {
     },
   ];
 
+  const [choiceData, setChoiceData] = useState([]);
+  const [instituteData, setInstituteData] = useState([]);
+
   const filteredData = table_data.filter((college) => {
     return (
       formData.university_name === "" ||
@@ -462,6 +461,12 @@ function OptionForm() {
   };
   const savePreferenceData = () => {
     setCurrentStep(3);
+    setChoiceData(
+      table_data.filter((f) => f.Choice_Code).map((f) => f.Choice_Code)
+    );
+    setInstituteData(
+      table_data.filter((f) => f.Institute_Name).map((f) => f.Institute_Name)
+    );
   };
   const insertChoiceCode = () => {
     const { choice_code, preference_no, institute_name, university_name } =
@@ -527,23 +532,7 @@ function OptionForm() {
     });
   };
 
-  const moveChoice = () => {
-    if (insertChoiceData) {
-      setInsertChoiceData(false);
-      setMoveChoiceData(true);
-    } else {
-      setMoveChoiceData(true);
-    }
-  };
-
-  const showInsertChoice = () => {
-    if (moveChoiceData) {
-      setMoveChoiceData(false);
-      setInsertChoiceData(true);
-    } else {
-      setInsertChoiceData(true);
-    }
-  };
+  
 
   const moveRow = () => {
     const { preference_no, choice_code } = optionData;
@@ -1145,15 +1134,16 @@ function OptionForm() {
                                 "aria-label": "select preference",
                               }}
                             />
-                            {/* onChange={onSelectAllClick} */}
                           </TableCell>
                           <TableCell align="center">
                             <input
                               style={{
-                                width: "40px",
-                                textAlign: "center",
+                                width: "30px",
                                 fontWeight: 500,
                                 fontSize: "16px",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
                               }}
                               type="number"
                               value={
@@ -1256,7 +1246,7 @@ function OptionForm() {
                       padding: "1rem 0",
                       textTransform: "initial",
                     }}
-                    onClick={resetPreferenceList}
+                    onClick={showInsertDirectChoice}
                   >
                     Insert Choice Code Directly
                   </Button>
@@ -1278,7 +1268,7 @@ function OptionForm() {
                 </div>
               </div>
               <div className="option-form-inputs">
-                {insertChoiceData ? (
+                {choiceMode === "insert" ? (
                   <div>
                     <div className="form-row">
                       Select University
@@ -1302,7 +1292,7 @@ function OptionForm() {
                       Select Institute
                       <CustomSelect
                         name="institute_name"
-                        options={institute_names}
+                        options={instituteData}
                         value={optionData.institute_name}
                         height={35}
                         borderRadius={5}
@@ -1320,7 +1310,7 @@ function OptionForm() {
                       Select Choice Code
                       <CustomSelect
                         name="course_name"
-                        options={choice_code}
+                        options={choiceData}
                         value={optionData.choice_code}
                         height={35}
                         borderRadius={5}
@@ -1367,7 +1357,7 @@ function OptionForm() {
                   ""
                 )}
 
-                {moveChoiceData && (
+                {choiceMode === "insertDirect" && (
                   <div>
                     <div className="option-form-inputs">
                       <div className="form-row">
@@ -1392,7 +1382,65 @@ function OptionForm() {
                         Select Choice Code to which you want to move
                         <CustomSelect
                           name="choice_code"
-                          options={choice_code}
+                          options={choiceData}
+                          value={optionData.choice_code}
+                          height={35}
+                          borderRadius={5}
+                          width={500}
+                          placeholder="---Select Choice Code---"
+                          onChange={(value) =>
+                            setOptionData({
+                              ...optionData,
+                              choice_code: value,
+                            })
+                          }
+                        ></CustomSelect>
+                      </div>
+                      <div className="form-row">
+                        <Button
+                          sx={{
+                            background: "#08CB00",
+                            color: "#fff",
+                            width: "200px",
+                            height: "40px",
+                            fontSize: "14px",
+                            padding: "1rem 0",
+                            textTransform: "initial",
+                          }}
+                          onClick={moveRow}
+                        >
+                          Insert Direct Choice Code
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                {choiceMode === "move" && (
+                  <div>
+                    <div className="option-form-inputs">
+                      <div className="form-row">
+                        Select Preference Number to which you want to move
+                        <CustomSelect
+                          name="course_name"
+                          options={preference_no}
+                          value={optionData.preference_no}
+                          height={35}
+                          borderRadius={5}
+                          width={50}
+                          placeholder=""
+                          onChange={(value) =>
+                            setOptionData({
+                              ...optionData,
+                              preference_no: value,
+                            })
+                          }
+                        ></CustomSelect>
+                      </div>
+                      <div className="form-row">
+                        Select Choice Code to which you want to move
+                        <CustomSelect
+                          name="choice_code"
+                          options={choiceData}
                           value={optionData.choice_code}
                           height={35}
                           borderRadius={5}
@@ -1559,7 +1607,7 @@ function OptionForm() {
           )}
           {currentStep === 4 && (
             <div className="submit-form-container">
-              <img src={SuccessGif}></img>
+              <img src={SuccessGif} alt="img"></img>
               <div className="success-text">
                 {" "}
                 Your Application has successfully submitted!

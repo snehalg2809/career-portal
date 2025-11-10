@@ -86,3 +86,16 @@
 .input-content svg:hover {
   color: #000;
 }
+
+.email-data {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-email-data {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+}

@@ -1,8 +1,8 @@
-import { faLinkedin } from "@fortawesome/free-brands-svg-icons/faLinkedin";
-import { faFacebook } from "@fortawesome/free-brands-svg-icons/faFacebook";
-import { faInstagram } from "@fortawesome/free-brands-svg-icons/faInstagram";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+import LinkedInIcon from "../images/linkedin.png";
+import MailIcon from "../images/google.png";
+import TwitterIcon from "../images/twitter.png";
+import InstagramIcon from "../images/instagram.png";
+import FacebookIcon from "../images/facebook.png";
 import "./Footer.css";
 import { Link } from "react-router-dom";
 
@@ -13,16 +13,19 @@ function Footer() {
         <div className="copyright">Get in touch with us on social networks</div>
         <div className="social-handles">
           <a href="">
-            <FontAwesomeIcon icon={faInstagram} className="social-icons" />
+            <img src={InstagramIcon} className="social-icons" />
           </a>
           <a href="">
-            <FontAwesomeIcon icon={faFacebook} className="social-icons" />
+            <img src={FacebookIcon} className="social-icons" />
           </a>
           <a href="">
-            <FontAwesomeIcon icon={faLinkedin} className="social-icons" />
+            <img src={LinkedInIcon} className="social-icons" />
           </a>
           <a href="">
-            <FontAwesomeIcon icon={faEnvelope} className="social-icons" />
+            <img src={MailIcon} className="social-icons" />
+          </a>
+          <a href="">
+            <img src={TwitterIcon} className="social-icons" />
           </a>
         </div>
       </div>

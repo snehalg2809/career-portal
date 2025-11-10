@@ -1,3 +1,6 @@
+
+
+
 import "./Colleges.css";
 import Footer from "../footer/Footer";
 import Nav from "../nav/Nav";
@@ -9,22 +12,12 @@ import {
   faArrowRight,
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect, useMemo } from "react";
 import BreadcrumbsNav from "../nav/BreadcrumbsNav";
 import _ from "lodash";
 
 const collegeList = [
-  {
-    college_name:
-      "Veermata Jijabai Technological Institute(VJTI), Matunga, Mumbai",
-    university_name: "University of Mumbai",
-    location: "Mumbai",
-    fees: "10k-160k",
-    exams: "JEE Main/ MHT-CET",
-    institute_type: "Government-Aided Autonomous Home University",
-    category: "Management",
-  },
   {
     college_name:
       "Sipna Shikshan Prasarak Mandal College of Engineering & Technology, Amravati",
@@ -36,77 +29,8 @@ const collegeList = [
     category: "Engineering",
   },
   {
-    college_name: "ANURADHA COLLEGE OF ENGINEERING & TECHNOLOGY ",
-    university_name: "University of Amravati",
-    location: "Amravati",
-    fees: "10k-160k",
-    exams: "JEE Main/ MHT-CET",
-    institute_type: "Government-Aided Autonomous Home University",
-    category: "Engineering",
-  },
-  {
     college_name:
-      "Veermata Jijabai Technological Institute(VJTI), Matunga, Mumbai",
-    university_name: "University of Mumbai",
-    location: "Mumbai",
-    fees: "10k-160k",
-    exams: "JEE Main/ MHT-CET",
-    institute_type: "Government-Aided Autonomous Home University",
-    category: "Medical",
-  },
-  {
-    college_name:
-      "Veermata Jijabai Technological Institute(VJTI), Matunga, Mumbai",
-    university_name: "University of Mumbai",
-    location: "Mumbai",
-    fees: "10k-160k",
-    exams: "JEE Main/ MHT-CET",
-    institute_type: "Government-Aided Autonomous Home University",
-    category: "Medical",
-  },
-  {
-    college_name:
-      "Veermata Jijabai Technological Institute(VJTI), Matunga, Mumbai",
-    university_name: "University of Mumbai",
-    location: "Mumbai",
-    fees: "10k-160k",
-    exams: "JEE Main/ MHT-CET",
-    institute_type: "Government-Aided Autonomous Home University",
-    category: "Medical",
-  },
-  {
-    college_name:
-      "Veermata Jijabai Technological Institute(VJTI), Matunga, Mumbai",
-    university_name: "University of Mumbai",
-    location: "Mumbai",
-    fees: "10k-160k",
-    exams: "JEE Main/ MHT-CET",
-    institute_type: "Government-Aided Autonomous Home University",
-    category: "Management",
-  },
-  {
-    college_name:
-      "Veermata Jijabai Technological Institute(VJTI), Matunga, Mumbai",
-    university_name: "University of Mumbai",
-    location: "Mumbai",
-    fees: "10k-160k",
-    exams: "JEE Main/ MHT-CET",
-    institute_type: "Government-Aided Autonomous Home University",
-    category: "Medical",
-  },
-  {
-    college_name:
-      "Veermata Jijabai Technological Institute(VJTI), Matunga, Mumbai",
-    university_name: "University of Mumbai",
-    location: "Mumbai",
-    fees: "10k-160k",
-    exams: "JEE Main/ MHT-CET",
-    institute_type: "Government-Aided Autonomous Home University",
-    category: "Medical",
-  },
-  {
-    college_name:
-      "Veermata Jijabai Technological Institute(VJTI), Matunga, Mumbai",
+      "Veermata Jijabai Technological Institute (VJTI), Matunga, Mumbai",
     university_name: "University of Mumbai",
     location: "Mumbai",
     fees: "10k-160k",
@@ -116,67 +40,7 @@ const collegeList = [
   },
   {
     college_name:
-      "Veermata Jijabai Technological Institute(VJTI), Matunga, Mumbai",
-    university_name: "University of Mumbai",
-    location: "Mumbai",
-    fees: "10k-160k",
-    exams: "JEE Main/ MHT-CET",
-    institute_type: "Government-Aided Autonomous Home University",
-    category: "Medical",
-  },
-  {
-    college_name:
-      "Veermata Jijabai Technological Institute(VJTI), Matunga, Mumbai",
-    university_name: "University of Mumbai",
-    location: "Nashik",
-    fees: "10k-160k",
-    exams: "JEE Main/ MHT-CET",
-    institute_type: "Government-Aided Autonomous Home University",
-    category: "Management",
-  },
-  {
-    college_name:
-      "Veermata Jijabai Technological Institute(VJTI), Matunga, Mumbai",
-    university_name: "University of Mumbai",
-    location: "Mumbai",
-    fees: "10k-160k",
-    exams: "JEE Main/ MHT-CET",
-    institute_type: "Government-Aided Autonomous Home University",
-    category: "Medical",
-  },
-  {
-    college_name:
-      "Veermata Jijabai Technological Institute(VJTI), Matunga, Mumbai",
-    university_name: "University of Mumbai",
-    location: "Mumbai",
-    fees: "10k-160k",
-    exams: "JEE Main/ MHT-CET",
-    institute_type: "Government-Aided Autonomous Home University",
-    category: "Engineering",
-  },
-  {
-    college_name:
-      "Veermata Jijabai Technological Institute(VJTI), Matunga, Mumbai",
-    university_name: "University of Mumbai",
-    location: "Mumbai",
-    fees: "10k-160k",
-    exams: "JEE Main/ MHT-CET",
-    institute_type: "Government-Aided Autonomous Home University",
-    category: "Engineering",
-  },
-  {
-    college_name:
-      "Veermata Jijabai Technological Institute(VJTI), Matunga, Mumbai",
-    university_name: "University of Mumbai",
-    location: "Nashik",
-    fees: "10k-160k",
-    exams: "JEE Main/ MHT-CET",
-    institute_type: "Government-Aided Autonomous Home University",
-    category: "Engineering",
-  },
-  {
-    college_name:
-      "Veermata Jijabai Technological Institute(VJTI), Matunga, Mumbai",
+      "Anuradha College of Engineering & Technology, Nashik",
     university_name: "University of Mumbai",
     location: "Nashik",
     fees: "10k-160k",
@@ -223,17 +87,37 @@ const cityName = [
   "Yavatmal",
 ];
 
+function useQuery() {
+  return new URLSearchParams(useLocation().search);
+}
+
 function Colleges() {
   const { name } = useParams();
+  const query = useQuery();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const cityParam = query.get("city");
+
   const [filteredColleges, setFilteredColleges] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [checkedCities, setCheckedCities] = useState([]);
 
+  useEffect(() => {
+    if (cityParam) {
+      const citiesFromUrl = cityParam.split(",").map((c) => c.trim());
+      setCheckedCities(citiesFromUrl);
+    } else {
+      setCheckedCities([]);
+    }
+  }, [cityParam]);
+
+  
   const applyFilters = useMemo(
     () =>
       _.debounce(() => {
         let filtered = collegeList.filter(
-          (college) => college.category === name
+          (college) => college.category.toLowerCase() === name.toLowerCase()
         );
 
         if (searchValue) {
@@ -259,16 +143,28 @@ function Colleges() {
 
   const handleSearchChange = (e) => {
     setSearchValue(e.target.value);
-    setCheckedCities(cityName.filter((c) => c === e.target.value));
   };
 
   const handleCheckboxChange = (e) => {
     const { value, checked } = e.target;
+    let updatedCities = [];
+
     if (checked) {
-      setCheckedCities([...checkedCities, value]); // add city
+      updatedCities = [...checkedCities, value];
     } else {
-      setCheckedCities(checkedCities.filter((c) => c !== value)); // remove city
+      updatedCities = checkedCities.filter((c) => c !== value);
     }
+
+    setCheckedCities(updatedCities);
+
+    const params = new URLSearchParams(location.search);
+    if (updatedCities.length > 0) {
+      params.set("city", updatedCities.join(","));
+    } else {
+      params.delete("city");
+    }
+
+    navigate(`${location.pathname}?${params.toString()}`, { replace: true });
   };
 
   return (
@@ -280,21 +176,21 @@ function Colleges() {
             <BreadcrumbsNav />
           </div>
         </div>
+
         <div className="top-colleges">
+          {/* Sidebar Filters */}
           <div className="filter-section">
             <h1>Search & Filter</h1>
             <div className="filter-card">
               <div className="search-input">
-                <FontAwesomeIcon
-                  icon={faMagnifyingGlass}
-                  className="search-icon"
-                />
+                <FontAwesomeIcon icon={faMagnifyingGlass} className="search-icon" />
                 <input
                   placeholder="Search by city"
                   value={searchValue}
                   onChange={handleSearchChange}
                 />
               </div>
+
               <div className="filter-content">
                 {cityName.map((city, index) => (
                   <label key={index} className="checkbox-item">
@@ -311,6 +207,7 @@ function Colleges() {
             </div>
           </div>
 
+          {/* Colleges Section */}
           <div className="college-section">
             <div className="tag">{name}</div>
             <div className="card-section">
@@ -320,18 +217,14 @@ function Colleges() {
                   <div className="card-details">
                     <div className="basic-details">
                       <span className="college-title">
-                        <FontAwesomeIcon icon={faLocationDot} />{" "}
-                        {college.location}
+                        <FontAwesomeIcon icon={faLocationDot} /> {college.location}
                       </span>
                       <span className="college-title ml-4">
-                        <FontAwesomeIcon icon={faFlag} />{" "}
-                        {college.institute_type}
+                        <FontAwesomeIcon icon={faFlag} /> {college.institute_type}
                       </span>
                     </div>
                     <div className="college-name">{college.college_name}</div>
-                    <div className="university-name">
-                      {college.university_name}
-                    </div>
+                    <div className="university-name">{college.university_name}</div>
                     <div className="fee-and-exam">
                       <div className="fee-details">
                         <span className="text-green f-14">Fees</span>{" "}
@@ -350,7 +243,7 @@ function Colleges() {
                   </div>
                 </div>
               ))}
-              {filteredColleges.length === 0 && <p>No colleges found.</p>}
+              {filteredColleges.length === 0 && <p className="no-result">No colleges found.</p>}
             </div>
           </div>
         </div>
@@ -361,3 +254,4 @@ function Colleges() {
 }
 
 export default Colleges;
+

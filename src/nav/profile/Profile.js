@@ -79,7 +79,6 @@ export default function Profile() {
   const [loaded, setLoaded] = useState(0);
   const total = 20;
   const user_email = sessionStorage.getItem("email");
-  const user_id = sessionStorage.getItem("username");
 
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarSeverity, setSnackbarSeverity] = useState("success");
@@ -138,11 +137,11 @@ export default function Profile() {
     casteCertificate: "",
   });
   const [courseData, setCourseData] = useState({
-    courseName: "CET",
-    courseFees: "5,000",
-    isPaid: "PAID",
-    courseDuration: "2 MONTHS",
-    isRenew: "NO",
+    courseName: "",
+    courseFees: "",
+    isPaid: "",
+    courseDuration: "",
+    isRenew: "",
   });
 
   const getSectionProgress = (dataObj) => {
@@ -181,6 +180,10 @@ export default function Profile() {
       setImage(storedImage);
     }
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem("profileProgress", Math.round(progress));
+  }, [progress]);
 
   useEffect(() => {
     const personalDetails = sessionStorage.getItem("personal-details");
@@ -353,7 +356,7 @@ export default function Profile() {
                             />
                             Upload Image
                           </div>
-                        ) : showPersonalDetails || personalData ? (
+                        ) : showPersonalDetails && personalData ? (
                           <div className="personal-data">
                             <div className="personal-data-section">
                               <label style={{ fontWeight: 700 }}>Name: </label>
@@ -850,7 +853,7 @@ export default function Profile() {
               {/* course details */}
               {activeSection === "course" && (
                 <div className="education-container">
-                  {courseData ? (
+                  {courseData.courseName ? (
                     <div>
                       <div className="details-row">
                         <div className="input-group">

@@ -14,7 +14,6 @@ import Colleges from "./colleges/Colleges.js";
 import AboutUs from "./about/AboutUs.js";
 import BranchwiseList from "./features/BranchwiseList.js";
 import ProtectedRoute from "./protected-route/ProtectedRoute";
-import CustomSelect from "./features/CustomSelect.js";
 import Profile from "./nav/profile/Profile.js";
 import OptionForm from "./option-form/OptionForm.js";
 import CollegePredictor from "./features/CollegePredictor.js";
@@ -22,6 +21,12 @@ import Chatbot from "./home/Chatbot.js";
 import { AuthProvider } from "./auth-guard/AuthContext.js";
 import ChatbotImg from "./images/chatbot/robot.png";
 import Settings from "./nav/profile/Settings.js";
+import TopCollegeList from "./features/TopCollegeList.js";
+import Courses from "./courses/Courses.js";
+import ContactUs from "./contat-us/ContactUs.js";
+import EnrollmentForm from "./enrollment-form/EnrollmentForm.js";
+import PaymentSuccess from "./courses/PaymentSuccess.js";
+import Exams from "./exams/Exams.js";
 
 function App() {
   const [chatOpen, setChatOpen] = useState(false);
@@ -56,7 +61,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
-           
+
             <Route
               path="/preference-list"
               element={
@@ -81,7 +86,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
-             <Route
+            <Route
               path="/college-predictor"
               element={
                 <ProtectedRoute>
@@ -110,6 +115,54 @@ function App() {
               element={
                 <ProtectedRoute>
                   <Settings />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/top-college-list"
+              element={
+                <ProtectedRoute>
+                  <TopCollegeList />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/courses"
+              element={
+                <ProtectedRoute>
+                  <Courses />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/contact-us"
+              element={
+                <ProtectedRoute>
+                  <ContactUs />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/enrollment-form"
+              element={
+                <ProtectedRoute>
+                  <EnrollmentForm />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/payment-success"
+              element={
+                <ProtectedRoute>
+                  <PaymentSuccess />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/exams-details"
+              element={
+                <ProtectedRoute>
+                  <Exams />
                 </ProtectedRoute>
               }
             />

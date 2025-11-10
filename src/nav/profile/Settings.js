@@ -9,7 +9,6 @@ import BreadcrumbsNav from "../BreadcrumbsNav";
 
 function Settings() {
   const [email, setEmail] = useState("");
-  const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showNewPassword, setShowNewPassword] = useState(false);
@@ -98,26 +97,34 @@ function Settings() {
             <div className="settings-card">
               <div>Update Email</div>
               <div className="card-data">
-                <label>Enter New Email</label>
-                <input
-                  className="input-content"
-                  placeholder="Email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-                <Button
-                  sx={{
-                    background: "#4FB7B3",
-                    color: "#fff",
-                    width: "100px",
-                    fontSize: "14px",
-                    padding: ".5rem 0",
-                    textTransform: "initial",
-                  }}
-                  onClick={handleEmailChange}
-                >
-                  Update
-                </Button>
+                <div className="email-data">
+                  <div>
+                    <label>Current Email Id:</label>
+                    <div>{sessionStorage.getItem("email")}</div>
+                  </div>
+                  <div className="new-email-data">
+                    <label>Enter New Email</label>
+                    <input
+                      className="input-content"
+                      placeholder="Email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
+                    <Button
+                      sx={{
+                        background: "#4FB7B3",
+                        color: "#fff",
+                        width: "100px",
+                        fontSize: "14px",
+                        padding: ".5rem 0",
+                        textTransform: "initial",
+                      }}
+                      onClick={handleEmailChange}
+                    >
+                      Update
+                    </Button>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -134,7 +141,6 @@ function Settings() {
                     className="settings-input"
                     placeholder="Current Password"
                     value={sessionStorage.getItem("username")}
-                    onChange={(e) => setCurrentPassword(e.target.value)}
                     readOnly
                     style={{ cursor: "not-allowed" }}
                   />

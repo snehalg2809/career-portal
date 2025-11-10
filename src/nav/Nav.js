@@ -51,14 +51,25 @@ function Nav() {
   return (
     <div className={`home ${isOpen ? "navbar-open" : ""}`}>
       <div className={`navbar ${isOpen ? "open" : ""}`}>
-        <FontAwesomeIcon icon={faGraduationCap} />
+        <div
+          className="d-flex"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: ".5rem",
+          }}
+        >
+          <FontAwesomeIcon icon={faGraduationCap} />
+          <h3>HB Educational Firm</h3>
+        </div>
 
         {/* Hamburger */}
         <div className="hamburger" onClick={() => setIsOpen(!isOpen)}>
           <FontAwesomeIcon icon={isOpen ? faTimes : faBars} />
         </div>
 
-        {/* Navigation Links */}
+        {/* Navigaion Links */}
         <div className={`links ${isOpen ? "open" : ""}`}>
           <Link to="/home">Home</Link>
           <div className="dropdown">
@@ -69,9 +80,21 @@ function Nav() {
               <Link to="/top-colleges/Management">Management</Link>
             </div>
           </div>
-          <Link to="/exams">Exams</Link>
+
+          <Link to="/exams-details">Exams</Link>
+          {/* <Link to="/courses">Paid Course</Link> */}
+          <Link to="/enrollment-form">Enrolment form</Link>
           <Link to="/option-form">Option Form</Link>
+          <div className="dropdown">
+            <span>Student Corner ▾</span>
+            <div className="dropdown-menu">
+              <Link to="/study-material">Study Material</Link>
+              <Link to="/top-colleges/Medical">Medical</Link>
+              <Link to="/top-colleges/Management">Management</Link>
+            </div>
+          </div>
           <Link to="/about-us">About Us</Link>
+          <Link to="/contact-us">Contact Us</Link>
         </div>
 
         {/* User Actions */}
@@ -118,7 +141,7 @@ function Nav() {
           title="Logout"
           message="Do you want to logout?"
           onCancel={() => setShowModal(false)}
-          onConfirm={handleLogout} 
+          onConfirm={handleLogout}
         />
       )}
     </div>

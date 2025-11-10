@@ -29,9 +29,11 @@
 }
 
 .social-icons {
-  height: 30px;
-  width: 30px;
+  height: 35px;
+  width: 35px;
   border-radius: 50%;
+  object-fit: contain; 
+  transition: transform 0.2s ease;
 }
 
 .footer2 {
@@ -41,8 +43,7 @@
   font-size: 16px;
 }
 
-.box-icon,
-svg {
+.box-icon {
   width: 140%;
   height: 100%;
   fill: rgb(62, 49, 49);

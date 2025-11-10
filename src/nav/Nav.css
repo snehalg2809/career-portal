@@ -90,7 +90,7 @@ body {
   transform: translateY(-10px);
   pointer-events: none;
   position: absolute;
-  top: 100%;
+  top: 110%;
   left: 0;
   background: #fff;
   min-width: 160px;

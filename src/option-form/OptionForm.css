@@ -5,7 +5,7 @@
   overflow: visible;
 }
 
-.option-form-container img {
+/* .option-form-container img {
   position: absolute;
   top: 0;
   left: 0;
@@ -13,7 +13,7 @@
   height: 100%;
   object-fit: cover;
   z-index: 0;
-}
+} */
 
 .option-form-data {
   margin: 3rem 0;
@@ -256,4 +256,13 @@
 .success-text {
   font-size: 30px;
   font-weight: 700;
+}
+
+input .number-input {
+  width: "30px";
+  font-weight: 500;
+  font-size: "16px";
+  display: "flex";
+  align-items: "center";
+  justify-content: "center";
 }
