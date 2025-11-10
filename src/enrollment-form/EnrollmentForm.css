@@ -1,0 +1,184 @@
+.file-name {
+  color: "#333";
+  font-size: "14px";
+}
+
+.file-input-design {
+  background-color: #fff;
+  border: 1px solid #000;
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 500;
+  width: 280px;
+  display: inline-block; /* ensures proper sizing and click area */
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.file-input-design:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.personal-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* two columns */
+  gap: 1.5rem 1.5rem; /* row gap / column gap */
+  align-items: start;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.details-input {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  width: 250px;
+  transition: border-color 0.3s ease;
+}
+
+.details-input:focus {
+  border-color: #4fb7b3; 
+}
+
+.details-row-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 5rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.file-input-design {
+  background-color: #fff;
+  border: 1px solid #000;
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.file-input-design:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.file-name {
+  color: #333;
+  font-size: 14px;
+}
+
+.enrolment-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: visible;
+}
+
+.enrolment-data::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.enrolment-data {
+  margin: 3rem 0;
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(rgba(79, 183, 179, 0.7), rgba(79, 183, 179, 0.7));
+}
+
+.enrolment-data-card {
+  width: 1400px;
+  position: relative;
+  height: 100%;
+  padding: 2rem;
+  margin: 5rem auto;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  z-index: 3;
+}
+
+.divider {
+  height: 1px;
+  background-color: #ccc;
+  margin: 15px 0;
+  width: 100%;
+  opacity: 0.6;
+}
+
+.phone-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: fit-content;
+  background: #fff;
+  overflow: hidden;
+}
+
+.country-code {
+  background: #f4f4f4;
+  padding: 10px 8px;
+  font-weight: 600;
+  color: #333;
+  border-right: 1px solid #ccc;
+  user-select: none; /* prevent editing */
+}
+
+.phone-input {
+  border: none;
+  outline: none;
+  padding: 3px;
+  font-size: 14px;
+  width: 200px;
+}
+
+.phone-input::placeholder {
+  color: #aaa;
+}
+
+.email-input-wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 1px 3px;
+  background: #fff;
+  width: 250px;
+}
+
+.email-input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  flex: 1;
+  width: 150px;
+  background: transparent;
+}
+
+.suffix {
+  font-size: 14px;
+  color: #555;
+}

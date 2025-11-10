@@ -27,6 +27,7 @@ import ContactUs from "./contat-us/ContactUs.js";
 import EnrollmentForm from "./enrollment-form/EnrollmentForm.js";
 import PaymentSuccess from "./courses/PaymentSuccess.js";
 import Exams from "./exams/Exams.js";
+import StudyMaterial from "./study-material/StudyMaterial.js";
 
 function App() {
   const [chatOpen, setChatOpen] = useState(false);
@@ -163,6 +164,14 @@ function App() {
               element={
                 <ProtectedRoute>
                   <Exams />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/study-material"
+              element={
+                <ProtectedRoute>
+                  <StudyMaterial />
                 </ProtectedRoute>
               }
             />

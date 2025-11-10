@@ -7,14 +7,17 @@ import Img3 from "../images/about-us-imgs/IMG-20250921-WA0003.jpg";
 import Img4 from "../images/about-us-imgs/IMG-20250921-WA0004.jpg";
 import Img5 from "../images/about-us-imgs/achieve.gif";
 import Img6 from "../images/about-us-imgs/IMG-20250921-WA0006.jpg";
+import { useState } from "react";
 
 function AboutUs() {
+  const [teamName, setTeamName] = useState("Development");
+
   return (
     <div>
       <Nav />
       <div className="about-us-container">
         <div className="about-us-header">
-          <h1>About Us</h1>
+          <h1 className="about-us-heading">About Us</h1>
           <div className="header-title">
             We provide expert guidance, personalized counseling, and reliable
             resources to simplify the complex admission process. Whether you're
@@ -23,10 +26,10 @@ function AboutUs() {
           </div>
         </div>
         <div className="image-container">
-          <img src={Img1} className="img-odd"></img>
-          <img src={Img2} className="img-even"></img>
-          <img src={Img3} className="img-odd"></img>
-          <img src={Img4} className="img-even"></img>
+          <img src={Img1} className="img-odd" alt="img" />
+          <img src={Img2} className="img-even" alt="img" />
+          <img src={Img3} className="img-odd" alt="img" />
+          <img src={Img4} className="img-even" alt="img" />
         </div>
         <div className="our-mission-container">
           <div className="mission-header">
@@ -43,7 +46,7 @@ function AboutUs() {
         </div>
         <div className="our-vision-container">
           <div className="vision-img">
-            <img src={Img5}></img>
+            <img src={Img5} alt="img"></img>
           </div>
           <div className="vision-text">
             <div className="mission-header">
@@ -82,30 +85,75 @@ function AboutUs() {
         <div className="team-container">
           <div className="mission-header">
             <span style={{ color: "#637AB9" }}> OUR</span>
-            <span style={{ color: "#fff" }}> TEAM</span>
+            <span style={{ color: "#fff" }}> SQUAD</span>
           </div>
-          <div className="team-data">
-            <div className="team-card">
-              <img src={Img6}></img>
-              <div className="name-heading">Ujwalsing Shinde</div>
-              <div className="designation-heading">
-                Senior Front-End Developer
-              </div>
+          <div className="team-heading">
+            <div className="team-names">
+              <h2 onClick={() => setTeamName("Development")}>
+                Development Team
+              </h2>{" "}
+              <h2 onClick={() => setTeamName("Marketing")}>Marketing Team</h2>
+              <h2 onClick={() => setTeamName("Counselling")}>Counselling Team</h2>
             </div>
-            <div className="team-card">
-              <img src={Img6}></img>
-              <div className="name-heading">Vaibhav Shinde</div>
-              <div className="designation-heading">
-                Senior Back-End Developer
+            {teamName === "Development" && (
+              <div className="team-data">
+                <div className="team-card">
+                  <img src={Img6} alt="img"></img>
+                  <div className="name-heading">Ujwalsing Shinde</div>
+                  <div className="designation-heading">
+                    Senior Front-End Developer
+                  </div>
+                </div>
+                <div className="team-card">
+                  <img src={Img6} alt="img"></img>
+                  <div className="name-heading">Vaibhav Shinde</div>
+                  <div className="designation-heading">
+                    Senior Back-End Developer
+                  </div>
+                </div>
+                <div className="team-card">
+                  <img src={Img6} alt="img"></img>
+                  <div className="name-heading">Snehal Gaikwad</div>
+                  <div className="designation-heading">
+                    Senior Front-End Developer
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="team-card">
-              <img src={Img6}></img>
-              <div className="name-heading">Snehal Gaikwad</div>
-              <div className="designation-heading">
-                Senior Front-End Developer
+            )}
+            {teamName === "Marketing" && (
+              <div className="team-data">
+                <div className="team-card">
+                  <img src={Img6} alt="img"></img>
+                  <div className="name-heading">Tarun</div>
+                  <div className="designation-heading">
+                    Senior Front-End Developer
+                  </div>
+                </div>
+                <div className="team-card">
+                  <img src={Img6} alt="img"></img>
+                  <div className="name-heading">Arun</div>
+                  <div className="designation-heading">
+                    Senior Back-End Developer
+                  </div>
+                </div>
+                <div className="team-card">
+                  <img src={Img6} alt="img"></img>
+                  <div className="name-heading">Vishu</div>
+                  <div className="designation-heading">
+                    Senior Front-End Developer
+                  </div>
+                </div>
               </div>
-            </div>
+            )}
+            {teamName === "Counselling" && (
+              <div className="team-data">
+                <div className="team-card">
+                  <img src={Img6} alt="img"></img>
+                  <div className="name-heading">Harshali Bhandari</div>
+                  <div className="designation-heading">Counsellor</div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

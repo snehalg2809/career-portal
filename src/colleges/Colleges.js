@@ -1,6 +1,3 @@
-
-
-
 import "./Colleges.css";
 import Footer from "../footer/Footer";
 import Nav from "../nav/Nav";
@@ -39,8 +36,7 @@ const collegeList = [
     category: "Engineering",
   },
   {
-    college_name:
-      "Anuradha College of Engineering & Technology, Nashik",
+    college_name: "Anuradha College of Engineering & Technology, Nashik",
     university_name: "University of Mumbai",
     location: "Nashik",
     fees: "10k-160k",
@@ -112,7 +108,6 @@ function Colleges() {
     }
   }, [cityParam]);
 
-  
   const applyFilters = useMemo(
     () =>
       _.debounce(() => {
@@ -121,9 +116,12 @@ function Colleges() {
         );
 
         if (searchValue) {
-          filtered = filtered.filter((college) =>
-            college.location.toLowerCase().includes(searchValue.toLowerCase())
-          );
+          console.log({searchValue});
+          
+          filtered = filtered.filter((college) => {
+            college.location.toLowerCase().includes(searchValue.toLowerCase());
+            checkedCities.includes(searchValue);
+          });
         }
 
         if (checkedCities.length > 0) {
@@ -143,6 +141,7 @@ function Colleges() {
 
   const handleSearchChange = (e) => {
     setSearchValue(e.target.value);
+    setCheckedCities(e.target.value)
   };
 
   const handleCheckboxChange = (e) => {
@@ -183,7 +182,10 @@ function Colleges() {
             <h1>Search & Filter</h1>
             <div className="filter-card">
               <div className="search-input">
-                <FontAwesomeIcon icon={faMagnifyingGlass} className="search-icon" />
+                <FontAwesomeIcon
+                  icon={faMagnifyingGlass}
+                  className="search-icon"
+                />
                 <input
                   placeholder="Search by city"
                   value={searchValue}
@@ -217,14 +219,18 @@ function Colleges() {
                   <div className="card-details">
                     <div className="basic-details">
                       <span className="college-title">
-                        <FontAwesomeIcon icon={faLocationDot} /> {college.location}
+                        <FontAwesomeIcon icon={faLocationDot} />{" "}
+                        {college.location}
                       </span>
                       <span className="college-title ml-4">
-                        <FontAwesomeIcon icon={faFlag} /> {college.institute_type}
+                        <FontAwesomeIcon icon={faFlag} />{" "}
+                        {college.institute_type}
                       </span>
                     </div>
                     <div className="college-name">{college.college_name}</div>
-                    <div className="university-name">{college.university_name}</div>
+                    <div className="university-name">
+                      {college.university_name}
+                    </div>
                     <div className="fee-and-exam">
                       <div className="fee-details">
                         <span className="text-green f-14">Fees</span>{" "}
@@ -243,7 +249,9 @@ function Colleges() {
                   </div>
                 </div>
               ))}
-              {filteredColleges.length === 0 && <p className="no-result">No colleges found.</p>}
+              {filteredColleges.length === 0 && (
+                <p className="no-result">No colleges found.</p>
+              )}
             </div>
           </div>
         </div>
@@ -254,4 +262,3 @@ function Colleges() {
 }
 
 export default Colleges;
-

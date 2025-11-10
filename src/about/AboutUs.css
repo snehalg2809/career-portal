@@ -60,8 +60,8 @@ img {
 }
 
 .mission-header {
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 30px;
+  font-weight: bolder;
 }
 
 .our-vision-container {
@@ -140,7 +140,7 @@ img {
 }
 
 .team-container {
-  height: 300px;
+  height: 500px;
   padding: 1rem;
   align-items: center;
   display: flex;
@@ -182,6 +182,19 @@ img {
   gap: 2rem;
   align-items: center;
   justify-content: center;
+  margin: 4rem 0;
+}
+
+.about-us-heading{
+  font-size: 40px;
+  font-weight: 900;
+}
+
+.team-heading{
+  margin: 2rem 0;
+   display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .team-data img {
@@ -199,4 +212,22 @@ img {
 .designation-heading {
   color: #4fb7b3;
   font-size: 16px;
+}
+
+.team-names {
+  display: flex;
+  flex-direction: row;
+}
+
+.team-names h2 {
+  padding: .5rem 2rem;
+  color: #efefef;
+  border: 1px solid #efefef;
+  cursor: pointer;
+ 
+}
+
+.team-names h2:hover{
+  background-color: #efefef;
+  color: #4fb7b3;
 }

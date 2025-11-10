@@ -14,11 +14,15 @@
   margin-bottom: 2rem;
 }
 
-.details .features-back-img {
-  position: relative;
-  height: 100%;
+.preference-data .features-back-img {
+   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  opacity: 0.3;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.5;
 }
 
 .details-card {
@@ -178,7 +182,7 @@
   overflow: visible;
 }
 
-.input-container img {
+/* .input-container img {
   position: absolute;
   top: 0;
   left: 0;
@@ -187,7 +191,7 @@
   object-fit: cover;
   z-index: 0;
   opacity: 0.5;
-}
+} */
 
 .branch-data::after {
   content: "";
@@ -205,6 +209,7 @@
   padding: 2rem;
   position: relative;
   z-index: 2;
+  background: linear-gradient(rgba(79,183,179,0.5), rgba(79,183,179,0.5));
 }
 
 .preference-data-card {

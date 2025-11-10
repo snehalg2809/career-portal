@@ -3,6 +3,8 @@ import Box from "@mui/material/Box";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import Chip from "@mui/material/Chip";
+import OutlinedInput from "@mui/material/OutlinedInput";
 
 export default function CustomSelect({
   placeholder,
@@ -12,23 +14,52 @@ export default function CustomSelect({
   height,
   borderRadius,
   width,
+  multiple = false, // support multi-select
 }) {
   const handleChange = (event) => {
-    onChange(event.target.value); // send selected value to parent
+    onChange(event.target.value); // send selected value(s) to parent
   };
 
   return (
-    <Box sx={{ minWidth: { width }, height: 30 }}>
+    <Box
+      sx={{ minWidth: { width }, height: 30, borderRadius: { borderRadius } }}
+    >
       <FormControl
         fullWidth
         sx={{ background: "#fff", borderRadius: { borderRadius } }}
       >
         <Select
-          value={value ?? ""}
+          multiple={multiple}
+          value={value ?? (multiple ? [] : "")}
           onChange={handleChange}
           displayEmpty
-          inputProps={{ "aria-label": "Without label" }}
-          sx={{ borderRadius: { borderRadius }, height: { height } }}
+          input={<OutlinedInput />}
+          renderValue={(selected) => {
+            if (!selected || selected.length === 0) {
+              return <em>{placeholder}</em>;
+            }
+            if (multiple) {
+              return (
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    gap: 0.5,
+                    maxHeight: 80, // max height for chips container
+                    overflowY: "auto", // scroll if overflow
+                    paddingRight: 1,
+                   
+                  }}
+                >
+                  {selected.map((val, index) => (
+                    <Chip key={index} label={val} size="small" />
+                  ))}
+                </Box>
+              );
+            }
+            return selected;
+          }}
+          sx={{ height: height }}
           MenuProps={{
             disableScrollLock: true,
             PaperProps: {
@@ -48,15 +79,9 @@ export default function CustomSelect({
               key={index}
               value={option}
               sx={{
-                "&.Mui-selected": {
-                  backgroundColor: "#d1e7ff",
-                },
-                "&.Mui-selected:hover": {
-                  backgroundColor: "#bcdfff",
-                },
-                "&:hover": {
-                  backgroundColor: "#fff",
-                },
+                "&.Mui-selected": { backgroundColor: "#8ABEB9" },
+                "&.Mui-selected:hover": { backgroundColor: "#bcdfff" },
+                "&:hover": { backgroundColor: "#fff" },
               }}
             >
               {option}

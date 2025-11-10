@@ -1,0 +1,82 @@
+.study-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  overflow: visible;
+}
+
+.option-form-data {
+  margin: 3rem 0;
+  padding: 2rem;
+  position: relative;
+  background: #4fb7b3;
+  z-index: 1;
+}
+
+/* .option-form-data-card {
+  width: 100%;
+  position: relative;
+  height: 1000px;
+  padding: 2rem;
+
+  margin: 1rem auto;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  background: #f1f0e9;
+  z-index: 3;
+} */
+
+.option-form-heading {
+  background: #003161;
+  color: #fff;
+  padding: 1rem;
+}
+
+.option-form-title {
+  background: #003161;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 1rem;
+}
+
+
+.study-card{
+    height: 200px;
+    width: 300px;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 10px;
+    background-color: #f7f7f7;
+}
+
+.course-name{
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.course-description{
+    font-size: 14px;
+    font-weight: 500;
+    margin: 1rem;
+    padding: 1rem 0;
+}
+
+.study-card a{
+    background-color: #4fb7b3;
+    text-decoration: none;
+    color: #fff;
+    padding: .5rem;
+    border-radius: 8px;
+}
+
+.study-content{
+  display: flex;
+  flex-direction: row;
+  flex: 1 1;
+  gap: 2rem;
+}

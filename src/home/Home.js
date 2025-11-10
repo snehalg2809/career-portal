@@ -27,6 +27,7 @@ import Toast from "../toast/Toast";
 import { Button, Snackbar, Alert } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import CustomSelect from "../features/CustomSelect";
+import Testimonials from "./Testimonial";
 
 const Modal = ({ title, message, onCancel, onConfirm }) => (
   <div className="overlay" onClick={onCancel}>
@@ -117,6 +118,8 @@ function Home() {
     setSnackbarOpen(false);
   };
 
+   
+
   return (
     <div>
       <Nav />
@@ -146,13 +149,13 @@ function Home() {
             </div>
           </div>
           <div className="header-img">
-            <img className="" src={HeaderImage}></img>
+            <img className="" src={HeaderImage} alt="img"></img>
           </div>
         </div>
 
         {/* features */}
         <div className="features-container ml-2">
-          <img src={BackImg}></img>
+          <img src={BackImg} alt="img"></img>
           <div className="heading-div">
             <span className="heading">Ease Your Process With</span>{" "}
             <span className="highlight-text"> Our Tools</span>
@@ -164,7 +167,7 @@ function Home() {
             <div className="cards">
               <div className="card-body">
                 <div className="card-icon">
-                  <img src={CollegeList} />
+                  <img src={CollegeList} alt="img"/>
                 </div>
                 <h5 className="card-title mt-4">Preference List Generator</h5>
                 <p className="card-text">
@@ -181,7 +184,7 @@ function Home() {
             <div className="ml-2 cards">
               <div className="card-body">
                 <div className="card-icon">
-                  <img src={List} height={"50px"} />
+                  <img src={List} height={"50px"} alt="img"/>
                 </div>
                 <h5 className="card-title mt-3">Branch wise cutoff list</h5>
                 <p className="card-text">
@@ -199,14 +202,14 @@ function Home() {
             <div className="cards">
               <div className="card-body">
                 <div className="card-icon">
-                  <img src={CollegeIcon} height={"50px"} />
+                  <img src={CollegeIcon} height={"50px"} alt="img" />
                 </div>
                 <h5 className="card-title mt-4">Top Colleges List</h5>
                 <p className="card-text">
                   List of best colleges based on various criteria .
                 </p>
                 <div
-                  onClick={() => showTopFeatures("/top-colleges/Management")}
+                  onClick={() => showTopFeatures("/top-college-list")}
                   className="more-btn"
                 >
                   View More <FontAwesomeIcon icon={faChevronDown} />
@@ -216,7 +219,7 @@ function Home() {
             <div className="cards">
               <div className="card-body">
                 <div className="card-icon">
-                  <img src={Predictor} height={"50px"} />
+                  <img src={Predictor} alt="img" height={"50px"} />
                 </div>
                 <h5 className="card-title mt-4">Colleges Predictor</h5>
                 <p className="card-text">
@@ -235,12 +238,16 @@ function Home() {
         </div>
 
         {/* news container */}
+
+
+
         <div className="news-container">
           <div className="news-header">
             <span className="heading">Latest News </span>
             <span className="highlight-text">and Notifications</span>
+          <Testimonials/>
           </div>
-          <div className="card-carousel">
+          {/* <div className="card-carousel">
             <div className="card-block">
               {news.map((news, index) => (
                 <div key={index} className="news-card p-4 ">
@@ -257,12 +264,12 @@ function Home() {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Choose Us */}
         <div className="us-container">
-          <img src={BackgroundImg}></img>
+          <img src={BackgroundImg} alt="img"></img>
           <div className="us-heading">
             <span className="heading">Why Choose</span>
             <span className="highlight-text"> CareerCounselling</span>
@@ -274,7 +281,7 @@ function Home() {
 
           <div className="d-flex">
             <div className="gif-div">
-              <img src={UsImg}></img>
+              <img src={UsImg} alt="img"></img>
             </div>
             <div className="card-div">
               <div className="us-card">
@@ -315,7 +322,7 @@ function Home() {
           </div>
           <div className="offer-card-div">
             <div className="offer-card">
-              <img src={JobImg} />
+              <img src={JobImg} alt="img"/>
               <div className="offer-text">
                 <div className="caption-no">𝟘𝟙</div>
                 <div className="caption-text">
@@ -327,7 +334,7 @@ function Home() {
               </div>
             </div>
             <div className="offer-card">
-              <img src={StudentImg} />
+              <img src={StudentImg} alt="img"/>
               <div className="offer-text">
                 <div className="caption-no">𝟘𝟚</div>
                 <div className="caption-text">
@@ -339,7 +346,7 @@ function Home() {
               </div>
             </div>
             <div className="offer-card">
-              <img src={CareerImg} />
+              <img src={CareerImg} alt="img"/>
               <div className="offer-text">
                 <div className="caption-no">𝟘𝟛</div>
                 <div className="caption-text">
@@ -355,7 +362,7 @@ function Home() {
 
         {/* Form container */}
         <div className="form-container">
-          <img src={FormBackImg}></img>
+          <img src={FormBackImg} alt="img"></img>
           <div className="form-main">
             <div className="form-gif">
               {/* <img src={InquiryImg}></img> */}
